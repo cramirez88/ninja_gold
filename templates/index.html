@@ -7,6 +7,49 @@
   <title>Ninja Gold</title>
 </head>
 <body>
-  <h1>Hello, World</h1>
+  <div class="container">
+    <div class="total-gold">
+      <label for="gold">Your Gold:</label>
+      <input type="text">
+    </div>
+    <div class="activities">
+      <div class="farm">
+        <h4>Farm</h4>
+        <p>(earns 10-20 golds)</p>
+        <form action="/process_money" method="post">
+          <input type="hidden" value="farm">
+          <input type="submit" value="Find Gold!">
+        </form>
+      </div>
+      <div class="cave">
+        <h4>Cave</h4>
+        <p>(earns 5-10 golds)</p>
+        <form action="/process_money" method="post">
+          <input type="hidden" value="cave">
+          <input type="submit" value="Find Gold!">
+        </form>
+      </div>
+      <div class="house">
+        <h4>House</h4>
+        <p>(earns 2-5 golds)</p>
+        <form action="/process_money" method="post">
+          <input type="hidden" value="house">
+          <input type="submit" value="Find Gold!">
+        </form>
+      </div>
+      <div class="casino">
+        <h4>Casino</h4>
+        <p>(earns/takes 0-50 golds)</p>
+        <form action="/process_money" method="post">
+          <input type="hidden" value="casino">
+          <input type="submit" value="Find Gold!">
+        </form>
+      </div>
+    </div>
+    <div class="display-activities">
+      <p>Activities:</p>
+      <textarea name="activities" rows="3"></textarea>
+    </div>
+  </div>
 </body>
 </html>
