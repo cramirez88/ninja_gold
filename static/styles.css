@@ -1,0 +1,15 @@
+
+
+.container{
+  background-color: gray;
+  height: 100vh;
+}
+
+.total-gold{
+  padding-top: 10px;
+}
+
+.activities{
+  display: flex;
+  margin: 50px auto;
+}
