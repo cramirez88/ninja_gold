@@ -1,4 +1,4 @@
-from crypt import methods
+
 from flask import Flask, render_template, session, redirect, request, url_for
 import random
 
@@ -8,8 +8,9 @@ app.secret_key = 'zxcvb'
 # ROUTES
 @app.route('/')
 def index():
-    if 'gold' not in session:
+    if 'gold' and 'activities' not in session:
       session['gold'] = 0
+      session['activities'] = ''
     return render_template('index.html')
 
 @app.route('/process_money', methods=['POST'])
@@ -21,8 +22,15 @@ def process():
     elif request.form['building'] == 'house':
       session['gold'] += random.randint(2,5)
     elif request.form['building'] == 'casino':
-      session['gold'] += random.randint(0,50)
-
+      session['gold'] += random.randint(-50,50)
+    
+    if session['gold'] < 0:
+        session['message'] = f'<p>You lost all of your money in at the MGM Grand in Vegas. You have lost: {session["gold"]}</p>'
+    else:
+        session['message'] = f'<p>You commited a Vegas Heist. Total Price: {session["gold"]}</p>'
+    
+    session['activities'] += session['message']
+    
     return redirect(url_for('index'))
 
 
