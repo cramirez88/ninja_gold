@@ -18,3 +18,12 @@
   display: flex;
   margin: 50px auto;
 }
+
+.reset{
+  background-color: black;
+  color: white;
+  outline: none;
+  padding: 3px;
+  text-decoration: none;
+  border-radius: 4px;
+}
