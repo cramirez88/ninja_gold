@@ -13,23 +13,22 @@
 <body>
   <div class="container">
     <div class="total-gold">
-      <label for="gold">Your Gold:</label>
-      <input type="text">
+      <p>Your Gold: {{session['gold']}} </p>
     </div>
     <div class="activities">
       <div class="farm card-body">
         <h4 class="card-title">Farm</h4>
         <p class="card-text">(earns 10-20 golds)</p>
         <form action="/process_money" method="post">
-          <input type="hidden" value="farm">
-          <input type="submit" class="btn btn-primary" value="Find Gold!">
+          <input type="hidden" value="farm" name="building">
+          <input type="submit" class="btn btn-primary" value="Find Gold!" >
         </form>
       </div>
       <div class="cave card-body">
         <h4 class="card-title">Cave</h4>
         <p class="card-text">(earns 5-10 golds)</p>
         <form action="/process_money" method="post">
-          <input type="hidden" value="cave">
+          <input type="hidden" value="cave" name="building">
           <input type="submit" class="btn btn-primary" value="Find Gold!">
         </form>
       </div>
@@ -37,7 +36,7 @@
         <h4 class="card=title">House</h4>
         <p class="card-title">(earns 2-5 golds)</p>
         <form action="/process_money" method="post">
-          <input type="hidden" value="house">
+          <input type="hidden" value="house" name="building">
           <input type="submit" class="btn btn-primary" value="Find Gold!">
         </form>
       </div>
@@ -45,7 +44,7 @@
         <h4 class="card-title">Casino</h4>
         <p class="card-text">(earns/takes 0-50 golds)</p>
         <form action="/process_money" method="post">
-          <input type="hidden" value="casino">
+          <input type="hidden" value="casino" name="building">
           <input type="submit" class="btn btn-primary" value="Find Gold!">
         </form>
       </div>
