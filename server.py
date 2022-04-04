@@ -25,9 +25,9 @@ def process():
       session['gold'] += random.randint(-50,50)
     
     if session['gold'] < 0:
-        session['message'] = f'<p>You lost all of your money in at the MGM Grand in Vegas. You have lost: {session["gold"]}</p>'
+        session['message'] = f'<p style=color:red;>You lost all of your money in at the MGM Grand in Vegas. You have lost: {session["gold"]}</p>'
     else:
-        session['message'] = f'<p>You commited a Vegas Heist. Total Price: {session["gold"]}</p>'
+        session['message'] = f'<p style=color:green>You commited a Vegas Heist. Total Price: {session["gold"]}</p>'
     
     session['activities'] += session['message']
     
